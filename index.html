@@ -168,13 +168,42 @@ html, body {
   border: 1px solid rgba(249,213,122,0.28);
   border-radius: 28px;
   padding: clamp(32px,6vw,52px) clamp(28px,5vw,48px);
-  max-width: 520px; width: 100%;
+
+  max-width: 520px;
+  width: 100%;
+
+  max-height: 75vh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+
   text-align: center;
+
   opacity: 0;
   transform: scale(0.9) translateY(18px);
-  transition: opacity 0.75s ease 0.5s, transform 0.75s cubic-bezier(0.34,1.2,0.64,1) 0.5s;
+  transition:
+    opacity 0.75s ease 0.5s,
+    transform 0.75s cubic-bezier(0.34,1.2,0.64,1) 0.5s;
+
   box-shadow: 0 0 90px rgba(249,213,122,0.1);
 }
+#msg-card::-webkit-scrollbar {
+  width: 8px;
+}
+
+#msg-card::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.04);
+  border-radius: 10px;
+}
+
+#msg-card::-webkit-scrollbar-thumb {
+  background: rgba(249,213,122,0.45);
+  border-radius: 10px;
+}
+
+#msg-card::-webkit-scrollbar-thumb:hover {
+  background: rgba(249,213,122,0.65);
+}
+  
 #final-msg.show #msg-card { opacity: 1; transform: scale(1) translateY(0); }
 
 #msg-sunflower {
@@ -190,8 +219,20 @@ html, body {
   font-family: 'Quicksand', sans-serif;
   font-size: clamp(1rem, 3.2vw, 1.15rem);
   font-weight: 400;
-  line-height: 1.85;
+  line-height: 1.9;
   color: var(--cream);
+
+  text-align: left;
+  max-width: 100%;
+}
+
+#msg-text .gold {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+#msg-text .light {
+  color: var(--text-soft);
 }
 #msg-text .gold  { color: var(--gold); font-weight: 600; }
 #msg-text .light { color: var(--text-soft); }
@@ -335,17 +376,59 @@ html, body {
   <div id="msg-card">
     <span id="msg-sunflower">🌻</span>
     <p id="msg-text">
-      Babe 🌻<br><br>
-      I just wanted to remind you of something you forget sometimes —<br>
-      <span class="gold">you're doing really, really well.</span><br><br>
-      Even on the days that feel heavy, you still show up,
-      you still try, and you handle more than you give yourself credit for.<br><br>
-      You're building something for yourself —
-      and you're going to get exactly where you're aiming.<br><br>
-      I'm here with you. And yes…
-      <span class="gold">bringing my exceptional personality as usual 😌</span><br><br>
-      <span class="light">Keep blooming. I love the smile it gives you… and those two tomatoes you pretend you don’t make.</span>
-    </p>
+
+Babe 🌻<br><br>
+
+Been a while, so I decided to make something for my beautiful girlfriend.<br><br>
+
+I just wanted to remind you of something that I hope you never forget:<br><br>
+
+<span class="gold">You're doing great.</span><br><br>
+
+Maybe not every day feels like it.
+Maybe some days feel messy, tiring, frustrating, or slower than you would like.<br><br>
+
+But from where I'm standing, I see someone who keeps showing up, keeps trying, keeps learning, and keeps moving forward.<br><br>
+
+You give yourself less credit than you deserve sometimes.<br><br>
+
+You're stronger than you think.<br>
+Smarter than you think.<br>
+More capable than you think.<br><br>
+
+And I genuinely believe you're going to achieve everything you're working toward.<br><br>
+
+Not because it's easy.<br>
+Not because things magically work out.<br><br>
+
+But because you're you.<br><br>
+
+And that's usually enough.<br><br>
+
+I also hope you remember to enjoy the little things along the way.<br>
+
+The random laughs.<br>
+The quiet moments.<br>
+The victories that don't seem big at first but actually are.<br><br>
+
+Life is better when you stop for a second and appreciate how far you've already come.<br><br>
+
+And just in case nobody has reminded you recently:<br><br>
+
+<span class="gold">I'm proud of you.</span><br><br>
+
+I'm here for you.<br>
+Cheering for you.<br>
+Believing in you.<br><br>
+
+And of course bringing my wonderful personality everywhere I go 😌🌻<br><br>
+
+<span class="light">
+Now go back to being amazing.<br>
+The world has enough problems already — it needs more of your smile.
+</span>
+
+</p>
     <button id="msg-close">close ✕</button>
   </div>
 </div>
